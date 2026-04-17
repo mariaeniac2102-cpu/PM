@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Média</title>
+</head>
+<body>
+    <center>
+
+    <h2>Calculadora de Média Escolar</h2>
+
+    <label>Nota 1:</label>
+    <input type="number" id="nota1" step="0.1" min="0" max="10">
+    <br><br>
+
+    <label>Nota 2:</label>
+    <input type="number" id="nota2" step="0.1" min="0" max="10">
+    <br><br>
+
+    <button id="btnCalcular">Calcular Média</button>
+
+    <p id="resultado"></p>
+
+    </center>
+
+<script>
+
+    document.getElementById('btnCalcular').addEventListener('click', function() {
+
+    const n1 = document.getElementById('nota1').value;
+    const n2 = document.getElementById('nota2').value;
+    const resultElement = document.getElementById('resultado');
+
+    if (n1 === '' || n2 === '') {
+        resultElement.innerText = "Por favor, preencha todas as notas.";
+        return;
+    }
+
+    const nota1 = parseFloat(n1);
+    const nota2 = parseFloat(n2);
+
+    if (isNaN(nota1) || isNaN(nota2)) {
+        resultElement.innerText = "Digite apenas números válidos.";
+        return;
+    }
+
+    if (nota1 < 0 || nota1 > 10 || nota2 < 0 || nota2 > 10) {
+        resultElement.innerText = "As notas devem estar entre 0 e 10.";
+        return;
+    }
+
+    const media = (nota1 + nota2) / 2;
+
+    let situacao = "";
+    if (media >= 7) {
+        situacao = "Aprovado";
+        resultElement.style.color = "#00FF00"
+
+    } else if (media >= 5) {
+        situacao = "Recuperação";
+        resultElement.style.color = "#FFA500"
+
+    } else {
+        situacao = "Reprovado";
+        resultElement.style.color = "#FF0000"
+
+    }
+
+    resultElement.innerText = `Média: ${media.toFixed(1)} - Situação: ${situacao}`;
+});
+
+</script>
+</body>
+</html>

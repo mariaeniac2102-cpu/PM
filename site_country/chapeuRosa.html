@@ -8,9 +8,35 @@
  <h2>Chapéu rosa com estilo delicado e cheio de personalidade. Confortável e perfeito para um look country moderno e feminino. 🌸🤠✨</h2></font>
 <table>
     <tr>
-<td><img src="produtos/chapeu.rosa.jpg" </td>
- <a href="" target="_blank">
-            </a>
+<td><img src="produtos/chapeu.rosa.jpg">
             <h1><font color="#000000">R$450,00</font> </h1>
-    </tr>
-    <tr>
+
+</td>
+</tr>
+</table>
+            
+ <button onclick="adicionarAoCarrinho('Chapéu Rosa', 450.00, 'produtos/chapeu.rosa.jpg')" class="btn-compra">
+        🛒 ADICIONAR AO CARRINHO
+    </button>
+</center>
+
+
+<script>
+    function adicionarAoCarrinho(nome, preco, imagem) {
+        let carrinho = JSON.parse(localStorage.getItem('meuCarrinho')) || [];
+       
+        carrinho.push({
+            nome: nome,
+            preco: preco,
+            imagem: imagem
+        });
+       
+        localStorage.setItem('meuCarrinho', JSON.stringify(carrinho));
+       
+        window.location.href = 'carrinho.html';
+    }
+</script>
+
+
+</body>
+</html>

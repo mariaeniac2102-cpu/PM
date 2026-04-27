@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carrinho🛍️🤠✨</title>
+</head>
+
+<body bgcolor="#FFDAB9">
+<center> 
+
+<h1>Carrinho 🛍️🤠✨</h1>
+
+<ul id="lista"></ul>
+
+<p>Total: <span id="total">R$ 0</span></p>
+
+<button onclick="finalizar()">Finalizar</button>
+
+<script>
+let carrinho = JSON.parse(localStorage.getItem("meuCarrinho")) || [];
+
+function mostrarCarrinho() {
+    let lista = document.getElementById("lista");
+    let total = 0;
+
+    lista.innerHTML = "";
+
+    for (let i = 0; i < carrinho.length; i++) {
+        total += carrinho[i].preco;
+
+        lista.innerHTML += `
+            <li>
+                ${carrinho[i].nome} - R$ ${carrinho[i].preco}
+                <button onclick="remover(${i})">X</button>
+            </li>
+        `;
+    }
+
+    document.getElementById("total").innerText = "R$ " + total;
+}
+
+function remover(i) {
+    carrinho.splice(i, 1);
+    localStorage.setItem("meuCarrinho", JSON.stringify(carrinho));
+    mostrarCarrinho();
+}
+
+function finalizar() {
+    alert("Compra finalizada!");
+    localStorage.removeItem("meuCarrinho");
+    mostrarCarrinho();
+}
+
+mostrarCarrinho();
+</script>
+</center>
+</body>
+</html>

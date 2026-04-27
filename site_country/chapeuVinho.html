@@ -8,9 +8,35 @@
  <h2>Chapéu vinho com estilo marcante e elegante. Confortável e ideal para um look country sofisticado e cheio de atitude. 🍷🤠✨</h2></font>
 <table>
     <tr>
-<td><img src="produtos/chapeu.vinho.jpg" </td>
- <a href="" target="_blank">
-            </a>
+<td><img src="produtos/chapeu.vinho.jpg" >
             <h1><font color="#000000">R$350,00</font> </h1>
-    </tr>
-    <tr>
+   
+</td>    
+</tr>
+</table>
+               
+ <button onclick="adicionarAoCarrinho('Chapéu Vinho', 350.00, 'produtos/chapeu.vinho.jpg')" class="btn-compra">
+        🛒 ADICIONAR AO CARRINHO
+    </button>
+</center>
+
+
+<script>
+    function adicionarAoCarrinho(nome, preco, imagem) {
+        let carrinho = JSON.parse(localStorage.getItem('meuCarrinho')) || [];
+       
+        carrinho.push({
+            nome: nome,
+            preco: preco,
+            imagem: imagem
+        });
+       
+        localStorage.setItem('meuCarrinho', JSON.stringify(carrinho));
+       
+        window.location.href = 'carrinho.html';
+    }
+</script>
+
+
+</body>
+</html>

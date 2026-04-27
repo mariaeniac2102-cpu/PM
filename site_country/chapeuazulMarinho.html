@@ -1,4 +1,4 @@
-<<HTML>
+<HTML>
 <HEAD>
 <TITLE>SITE_COUNTRY</TITLE>
 </HEAD>
@@ -8,10 +8,35 @@
  <h2>Chapéu azul marinho com estilo sofisticado e atemporal. Confortável e perfeito para um visual country elegante e cheio de personalidade. 🤠💙✨</h2></font>
 <table>
     <tr>
-<td><img src="produtos/chapeu.azulmarinho.jpg" </td>
- <a href="" target="_blank">
-            
-            </a>
+<td><img src="produtos/chapeu.azulmarinho.jpg" >
                <h1><font color="#000000">R$599,00</font> </h1>
-    </tr>
-    <tr>
+    
+</td>        
+</tr>
+</table>
+               
+ <button  onclick="adicionarAoCarrinho('Chapéu Azul Marinho', 599.00, 'produtos/chapeu.azulmarinho.jpg')" class="btn-compra">
+        🛒 ADICIONAR AO CARRINHO
+    </button>
+</center>
+
+
+<script>
+    function adicionarAoCarrinho(nome, preco, imagem) {
+        let carrinho = JSON.parse(localStorage.getItem('meuCarrinho')) || [];
+       
+        carrinho.push({
+            nome: nome,
+            preco: preco,
+            imagem: imagem
+        });
+       
+        localStorage.setItem('meuCarrinho', JSON.stringify(carrinho));
+       
+        window.location.href = 'carrinho.html';
+    }
+</script>
+
+
+</body>
+</html>

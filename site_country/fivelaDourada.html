@@ -3,26 +3,31 @@
 <TITLE>SITE_COUNTRY</TITLE>
 </HEAD>
 <BODY bgcolor="#FFDAB9"> 
+<style>
+img {
+    width: 250px;
+    height: 250px;
+}
+</style>
 <center>
     <font color="#A0522D">
- <h2>Chapéu gelo com estilo elegante e moderno. Leve, confortável e perfeito para um visual country sofisticado e cheio de charme. 🤠✨</h2></font>
+ <h2>FIVELA DOURADA🤠✨</h2></font>
 <table>
     <tr>
-<td><img src="produtos/chapeu.gelo.jpg" >
-            </a>
-            <h1><font color="#000000">R$299,00</font> </h1>
+<td><img src="produtos/fivela.dourada.jpg" >
+             <h1><font color="#000000">R$450,00</font> </h1>
 </td>
 </tr>
 </table>
                
- <button onclick="adicionarAoCarrinho('Chapéu Gelo', 299.00, 'produtos/chapeu.gelo.jpg')" class="btn-compra">
+ <button onclick="adicionarAoCarrinho('Fivela Dourada', 450.00, 'produtos/fivela.dourada.jpg')" class="btn-compra">
         🛒 ADICIONAR AO CARRINHO
     </button>
 </center>
 
 
 <script>
-    function adicionarAoCarrinho(nome, preco, imagem, quantidade) {
+    function adicionarAoCarrinho(nome, preco, imagem) {
         let carrinho = JSON.parse(localStorage.getItem('meuCarrinho')) || [];
        
         carrinho.push({

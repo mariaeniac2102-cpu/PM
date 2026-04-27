@@ -7,12 +7,36 @@
     <font color="#A0522D">
  <h2>Chapéu Azul Pralana com design moderno e estilo country autêntico. Confortável, resistente e perfeito para completar seu visual com elegância e atitude. 🤠💙</h2></font>
 
-
 <table>
     <tr>
-<td><img src="produtos/chapeu.azulclaro.jpg" </td>
- <a href="" target="_blank">
-            </a>
+<td><img src="produtos/chapeu.azulclaro.jpg" >
             <h1><font color="#000000">R$280,00</font> </h1>
-    </tr>
-    <tr>
+</td>
+</tr>
+</table>
+               
+ <button onclick="adicionarAoCarrinho('Chapéu Azul Claro', 280.00, 'produtos/chapeu.azulclaro.jpg')"class="btn-compra">
+        🛒 ADICIONAR AO CARRINHO
+    </button>
+</center>
+
+
+<script>
+    function adicionarAoCarrinho(nome, preco, imagem) {
+        let carrinho = JSON.parse(localStorage.getItem('meuCarrinho')) || [];
+       
+        carrinho.push({
+            nome: nome,
+            preco: preco,
+            imagem: imagem
+        });
+       
+        localStorage.setItem('meuCarrinho', JSON.stringify(carrinho));
+       
+        window.location.href = 'carrinho.html';
+    }
+</script>
+
+
+</body>
+</html>

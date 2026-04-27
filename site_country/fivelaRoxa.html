@@ -2,20 +2,26 @@
 <HEAD>
 <TITLE>SITE_COUNTRY</TITLE>
 </HEAD>
-<BODY bgcolor="#FFDAB9"> 
+<BODY bgcolor="#FFDAB9">
+<style>
+img {
+    width: 250px;
+    height: 250px;
+}
+</style> 
 <center>
     <font color="#A0522D">
- <h2>Chapéu preto com estilo clássico e marcante. Confortável e ideal para um visual country elegante e cheio de atitude. 🖤🤠✨</h2></font>
+ <h2>FIVELA ROXA🤠✨</h2></font>
 <table>
     <tr>
-<td><img src="produtos/chapeu.preto.jpg" >
-             <h1><font color="#000000">R$190,00</font> </h1>
+<td><img src="produtos/fivela.roxa.jpg" >
+             <h1><font color="#000000">R$400,00</font> </h1>
 
 </td>
 </tr>
 </table>
              
- <button onclick="adicionarAoCarrinho('Chapéu Preto', 190.00, 'produtos/chapeu.preto.jpg')"class="btn-compra">
+ <button  onclick="adicionarAoCarrinho('Fivela Roxa', 400.00, 'produtos/fivela.roxa.jpg')" class="btn-compra">
         🛒 ADICIONAR AO CARRINHO
     </button>
 </center>
@@ -30,8 +36,8 @@
             preco: preco,
             imagem: imagem
         });
-       
-        localStorage.setItem('meuCarrinho', JSON.stringify(carrinho));
+
+            localStorage.setItem('meuCarrinho', JSON.stringify(carrinho));
        
         window.location.href = 'carrinho.html';
     }
@@ -40,3 +46,5 @@
 
 </body>
 </html>
+
+   

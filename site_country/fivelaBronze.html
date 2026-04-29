@@ -21,20 +21,19 @@ img {
     </tr>
 </table>
              
- <button onclick="adicionarAoCarrinho('Fivela Bronze', 200.00, 'produtos/fivela.bronze.jpg')" class="btn-compra">
+ <button onclick="adicionarAoCarrinho('Fivela Bronze', 200.00 )" class="btn-compra">
         🛒 ADICIONAR AO CARRINHO
     </button>
 </center>
 
 
 <script>
-    function adicionarAoCarrinho(nome, preco, imagem) {
+    function adicionarAoCarrinho(nome, preco) {
         let carrinho = JSON.parse(localStorage.getItem('meuCarrinho')) || [];
        
         carrinho.push({
             nome: nome,
-            preco: preco,
-            imagem: imagem
+            preco: preco
         });
        
         localStorage.setItem('meuCarrinho', JSON.stringify(carrinho));
